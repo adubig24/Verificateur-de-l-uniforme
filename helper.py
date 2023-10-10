@@ -48,7 +48,7 @@ def _display_detected_frames_labels(conf, model, st_frame, image, is_display_tra
 
     image = cv2.resize(image, (720, int(720*(3/4))))
     image = cv2.flip(image, 1)
-    
+
     if is_display_tracking:
         res = model.track(image, conf=conf, persist=True)
     else:
@@ -77,25 +77,6 @@ def play_webcam(conf, model, type):
                                              image)
                 elif success and type == 2:
                     _display_detected_frames_labels(conf,
-                                             model,
-                                             st_frame,
-                                             image)
-                else:
-                    vid_cap.release()
-                    break
-        except Exception as e:
-            st.sidebar.error("Erreur de chargement de la webcam: " + str(e))
-
-def play_webcam2(conf, model):
-    source_webcam = settings.WEBCAM_PATH
-    if st.sidebar.button('Lancer la détection'):
-        try:
-            vid_cap = cv2.VideoCapture(source_webcam, cv2.CAP_DSHOW)
-            st_frame = st.empty()
-            while (vid_cap.isOpened()):
-                success, image = vid_cap.read()
-                if success:
-                    _display_detected_frames2(conf,
                                              model,
                                              st_frame,
                                              image)
