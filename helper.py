@@ -47,7 +47,8 @@ def _display_detected_frames_guidelines(conf, model, st_frame, image, is_display
 def _display_detected_frames_labels(conf, model, st_frame, image, is_display_tracking=None):
 
     image = cv2.resize(image, (720, int(720*(3/4))))
-
+    image = cv2.flip(image, 1)
+    
     if is_display_tracking:
         res = model.track(image, conf=conf, persist=True)
     else:
