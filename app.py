@@ -30,7 +30,7 @@ model_type = st.sidebar.radio(
 confidence = float(st.sidebar.slider(
     "Confiance du modèle", 25, 100, 40)) / 100
 
-# Selecting Detection Or Segmentation
+# Selecting Detection
 if model_type == 'Detection':
     model_path = Path(settings.DETECTION_MODEL)
 

@@ -77,10 +77,10 @@ Pour mettre en place et utiliser l'application de détection de casque/gilet de 
 
 3. Lancez l'application web en exécutant :
    ```bash
-   python app/web_app.py
+   python app.py
    ```
 
-4. Ouvrez un navigateur web et accédez à l'URL suivante : `http://localhost:8080` pour utiliser l'application.
+4. Ouvrez un navigateur web et accédez à l'URL suivante : `http://localhost:5001` (ou l'adresse qui sera affichée au moment du lancement de l'application) pour utiliser l'application.
 
 ## Contributions
 
